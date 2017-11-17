@@ -166,7 +166,7 @@ public class TennisScoringChallengeSteps {
 
     @Then("^the \"([^\"]*)\" scores should be:$")
     public void theScoresShouldBe(String whatAreWeScoring, String expectedScores) throws Throwable {
-        String[] scores = expectedScores.split("\r\n");
+        String[] scores = expectedScores.split("\n");
         for (String score : scores) {
             String scoreRegex = "(?i)" + "^[^\\d]*" + whatAreWeScoring + ".*" + score + "[^\\d]*$";
             String scoreDescription = "a " + whatAreWeScoring + " score of \"" + score + "\" (type first and no other numbers in the line)";
